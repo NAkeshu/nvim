@@ -1,7 +1,15 @@
 {
+    "coc.preferences.enableFloatHighlight": true,
+    "coc.preferences.snippetStatusText": "Ⓢ ",
     "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.source.around.firstMatch": false,
+    "coc.source.buffer.firstMatch": false,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.autoTrigger": "always",
+    "suggest.enablePreview": true,
+    "suggest.detailField": "preview",
     "suggest.completionItemKindLabels": {
         "class": "\uf0e8",
         "color": "\ue22b",
@@ -39,7 +47,6 @@
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
-    "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
         "python",
@@ -50,5 +57,6 @@
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "~/.config/nvim/plugged/vim-snippets/UltiSnips"
-    ]
+    ],
+    "languageserver": {}
 }
