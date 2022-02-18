@@ -49,6 +49,7 @@
     "codeLens.enable": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
+        "markdown",
         "python",
         "rust",
         "c",
