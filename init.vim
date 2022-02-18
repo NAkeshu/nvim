@@ -120,6 +120,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " snippets
 Plug 'honza/vim-snippets'
 
+Plug 'skywind3000/vim-terminal-help'
+
 call plug#end()
 
 " Theme
@@ -189,6 +191,9 @@ let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
+
+" vim terminal help
+let g:terminal_key = '≠'
 
 " ===
 " ===coc.nvim config
