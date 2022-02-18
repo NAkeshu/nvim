@@ -269,7 +269,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-imap <C-x> <Plug>(coc-snippets-expand)
-vmap <C-c> <Plug>(coc-snippets-select)
-imap <C-c> <Plug>(coc-snippets-expand-jump)
+imap <C-i> <Plug>(coc-snippets-expand)
+vmap <C-w> <Plug>(coc-snippets-select)
+imap <C-w> <Plug>(coc-snippets-expand-jump)
 
