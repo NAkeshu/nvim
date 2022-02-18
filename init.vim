@@ -192,9 +192,6 @@ let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
 
-" vim terminal help
-let g:terminal_key = '≠'
-
 " ===
 " ===coc.nvim config
 " ===
