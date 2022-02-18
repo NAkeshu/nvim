@@ -1,6 +1,6 @@
 # nvim
 
-## 自定义快捷键列表 Customized shrtcuts list
+## 自定义快捷键列表 Customized shortcuts list
 
 |                 |                                         |
 |-----------------|-----------------------------------------|
