@@ -56,11 +56,12 @@ set incsearch " 搜索同时高亮
 set ignorecase " 忽略大小写
 set smartcase " 智能大小写
 
-" 自定义按键 <> Customized Keys
+" 自定义按键 <> Customized & Remap Keys
 let mapleader=" " " 设置空格键为LEADER键
 
 map Q :q<CR>
 map W :w<CR>
+map R <C-r>
 
 map <CR>d :set splitright<CR>:vsplit<CR>
 map <CR>a :set nosplitright<CR>:vsplit<CR>
@@ -90,7 +91,9 @@ nmap <LEADER>u :UndotreeToggle<CR>
 nmap <C-m>p :MarkdownPreview<CR>
 " nmap <C-m>s :MarkdownPreviewStop<CR>
 nmap <C-m>t :TableModeToggle<CR>
-
+" Wildfire
+map <CR><CR> <Plug>(wildfire-fuel)
+vmap <CR><LEADER> <Plug>(wildfire-water)
 " 插件设置 <> Plugins Setting
 " vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -121,6 +124,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
 Plug 'skywind3000/vim-terminal-help'
+
+Plug 'tpope/vim-surround'
+Plug 'gcmt/wildfire.vim'
 
 call plug#end()
 
