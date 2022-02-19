@@ -72,9 +72,9 @@ map <LEADER>h <C-w>h
 map <LEADER>j <C-w>j
 map <LEADER>k <C-w>k
 
-map <TAB><TAB> :tabe<CR>
-map <TAB>j :-tabnext<CR>
-map <TAB>k :+tabnext<CR>
+nmap <TAB><TAB> :tabe<CR>
+nmap <TAB>j :-tabnext<CR>
+nmap <TAB>k :+tabnext<CR>
 
 map <C-j> 5j
 map <C-k> 5k
@@ -229,9 +229,10 @@ endif
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+  \ pumvisible() ? "\<C-n>" : "\<TAB>"
+"  \ <SID>check_back_space() ? \"\<TAB>\" :
+"  \ coc#refresh()
+" <S-TAB>选择上一个或隐藏trigger
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -275,7 +276,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-imap <C-i> <Plug>(coc-snippets-expand)
+map <C-i> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = '<c-w>'
+let g:coc_snippet_prev = '<c-q>'
 vmap <C-w> <Plug>(coc-snippets-select)
 imap <C-w> <Plug>(coc-snippets-expand-jump)
 
