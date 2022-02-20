@@ -57,7 +57,8 @@
     ],
     "snippets.ultisnips.directories": [
         "UltiSnips",
-        "~/.config/nvim/plugged/vim-snippets/UltiSnips"
+        "$HOME/.config/nvimi/UltiSnips/",
+        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"
     ],
     "languageserver": {}
 }

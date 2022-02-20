@@ -114,6 +114,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'Yggdroot/indentLine'
 
 " Markdown
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 
