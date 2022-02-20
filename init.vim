@@ -73,12 +73,14 @@ map <LEADER>j <C-w>j
 map <LEADER>k <C-w>k
 
 nmap <TAB><TAB> :tabe<CR>
-nmap <TAB>j :-tabnext<CR>
-nmap <TAB>k :+tabnext<CR>
+nmap <TAB>j :+tabnext<CR>
+nmap <TAB>k :-tabnext<CR>
 
 map <C-j> 5j
 map <C-k> 5k
 map <LEADER><CR> :nohlsearch<CR>
+
+imap <C-a> <ESC>A
 
 " 插件快捷键
 " nmap tt :NERDTreeFocus<CR>
@@ -277,7 +279,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-map <C-i> <Plug>(coc-snippets-expand)
+imap <C-k> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-w>'
 let g:coc_snippet_prev = '<c-q>'
 vmap <C-w> <Plug>(coc-snippets-select)
