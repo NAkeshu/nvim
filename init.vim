@@ -88,6 +88,7 @@ nmap <TAB>h :tabfirst<CR>
 nmap <TAB>l :tablast<CR>
 nmap <TAB>[ :bprevious<CR>
 nmap <TAB>] :bnext<CR>
+nmap <TAB>q :bdelete<CR>
 
 map <C-j> 5j
 map <C-k> 5k
