@@ -110,6 +110,7 @@ vmap <CR><LEADER> <Plug>(wildfire-water)
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'connorholyday/vim-snazzy'
 Plug 'mhartington/oceanic-next'
 
@@ -158,6 +159,8 @@ hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+let g:airline#extensions#tabline#enabled = 1
 
 " snazzy
 " colorscheme snazzy
