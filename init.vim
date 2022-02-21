@@ -63,6 +63,15 @@ map Q :q<CR>
 map W :w<CR>
 map R <C-r>
 
+" set placeholder
+imap <C-h> <++>
+" jump to the next placeholder match
+inoremap <C-f> <Esc>/<++><CR><Esc>cf>
+" Completions using placeholders
+inoremap ( ()<++><Esc>F)i
+inoremap [ []<++><Esc>F]i
+inoremap { {}<++><Esc>F}i
+
 map <CR>d :set splitright<CR>:vsplit<CR>
 map <CR>a :set nosplitright<CR>:vsplit<CR>
 map <CR>s :set splitbelow<CR>:split<CR>
