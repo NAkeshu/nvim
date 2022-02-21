@@ -119,6 +119,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'connorholyday/vim-snazzy'
 Plug 'mhartington/oceanic-next'
 
+Plug 'luochen1990/rainbow'
+
 " NerdTree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -166,6 +168,8 @@ hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:airline#extensions#tabline#enabled = 1
+
+let g:rainbow_active = 1
 
 " snazzy
 " colorscheme snazzy
