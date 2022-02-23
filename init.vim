@@ -304,5 +304,5 @@ imap <C-k> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-w>'
 let g:coc_snippet_prev = '<c-q>'
 vmap <C-w> <Plug>(coc-snippets-select)
-imap <C-w> <Plug>(coc-snippets-expand-jump)
+" imap <C-w> <Plug>(coc-snippets-expand-jump)
 
