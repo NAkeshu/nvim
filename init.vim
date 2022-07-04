@@ -228,6 +228,7 @@ let g:mkdp_filetypes = ['markdown']
 " extensions list
 let g:coc_global_extensions = [
             \ "coc-marketplace",
+            \ "coc-highlight",
             \ "coc-pairs",
             \ "coc-json",
             \ "coc-vimlsp",
