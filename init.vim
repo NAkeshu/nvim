@@ -94,7 +94,10 @@ map <C-j> 5j
 map <C-k> 5k
 map <LEADER><CR> :nohlsearch<CR>
 
-imap <C-a> <ESC>A
+imap <C-a> <ESC>I
+imap <C-e> <ESC>A
+imap <C-n> <ESC>ji
+imap <C-p> <ESC>ki
 
 " 插件快捷键
 " nmap tt :NERDTreeFocus<CR>
@@ -107,6 +110,12 @@ nmap <LEADER>u :UndotreeToggle<CR>
 nmap <C-m>p :MarkdownPreview<CR>
 " nmap <C-m>s :MarkdownPreviewStop<CR>
 nmap <C-m>t :TableModeToggle<CR>
+filetype indent on
+filetype indent on
+filetype indent on
+filetype plugin on
+filetype plugin on
+filetype plugin on
 " Wildfire
 map <CR><CR> <Plug>(wildfire-fuel)
 vmap <CR><LEADER> <Plug>(wildfire-water)
