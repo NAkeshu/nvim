@@ -64,7 +64,10 @@ map W :w<CR>
 map R <C-r>
 
 " set placeholder
-imap <C-h> <++>
+imap <C-m> <++>
+
+inoremap <C-h> <C-y>
+
 " jump to the next placeholder match
 inoremap <C-f> <Esc>/<++><CR><Esc>cf>
 " Completions using placeholders
