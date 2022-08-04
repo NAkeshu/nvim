@@ -1,4 +1,81 @@
-# nvim
+# nvim 配置文件
+
+# 使用方法
+
+## 安装&配置
+
+### 安装neovim
+
+*MacOS*
+
+```bash
+brew install neovim
+```
+
+*Linux*
+
+```bash
+# Arch Linux
+sudo pacman -S neovim
+
+# CentOS
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum install -y neovim python3-neovim
+
+# Debian / Ubuntu
+sudo apt-get install neovim
+
+# Fedora
+sudo dnf install -y neovim python3-neovim
+```
+
+*Windows*
+
+建议使用WSL或者Scoop
+
+```bash
+scoop install neovim
+```
+
+### 安装python支持
+
+```bash
+# pip
+pip install neovim
+
+# conda
+conda install -c conda-forge neovim
+```
+
+### 安装vim-Plug插件
+
+```bash
+# Unix
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Windows(PowerShell)
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
+```
+
+### 克隆配置文件
+
+```bash
+cd ~/.config/
+git clone git@github.com:NAkeshu/nvim.git
+
+cd nvim
+nvim init.vim
+```
+
+在init.vim文件内执行
+
+```vimscript
+:PlugInstall
+```
+
+插件安装好后再退出、启动几次neovim即可。
 
 ## 自定义快捷键列表 Customized & Remaned Keys list
 
