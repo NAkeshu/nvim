@@ -248,7 +248,6 @@ let g:coc_global_extensions = [
             \ "coc-rls",
             \ "coc-rust-analyzer",
             \ "coc-snippets",
-            \ "coc-cl",
             \ ]
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
