@@ -97,6 +97,7 @@ map <C-j> 5j
 map <C-k> 5k
 map <LEADER><CR> :nohlsearch<CR>
 
+" emacs keymapping
 imap <C-a> <ESC>I
 imap <C-e> <ESC>A
 imap <C-n> <ESC>ji
