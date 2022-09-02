@@ -73,15 +73,6 @@ inoremap ( ()<++><Esc>F)i
 inoremap [ []<++><Esc>F]i
 inoremap { {}<++><Esc>F}i
 
-map <CR>d :set splitright<CR>:vsplit<CR>
-map <CR>a :set nosplitright<CR>:vsplit<CR>
-map <CR>s :set splitbelow<CR>:split<CR>
-map <CR>w :set nosplitbelow<CR>:split<CR>
-map <LEADER>l <C-w>l
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
-map <LEADER>k <C-w>k
-
 nmap <TAB><TAB> :tabe<CR>
 nmap <TAB>j :tabprevious<CR>
 nmap <TAB>k :tabnext<CR>
