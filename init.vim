@@ -110,8 +110,8 @@ filetype plugin on
 filetype plugin on
 filetype plugin on
 " Wildfire
-map <CR><CR> <Plug>(wildfire-fuel)
-vmap <CR><LEADER> <Plug>(wildfire-water)
+" map <CR><CR> <Plug>(wildfire-fuel)
+" vmap <CR><LEADER> <Plug>(wildfire-water)
 " 插件设置 <> Plugins Setting
 " vim-plug
 call plug#begin('~/.config/nvim/plugged')
