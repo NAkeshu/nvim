@@ -147,7 +147,7 @@ Plug 'honza/vim-snippets'
 
 Plug 'skywind3000/vim-terminal-help'
 
-Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 
 call plug#end()
