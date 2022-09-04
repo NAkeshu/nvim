@@ -73,14 +73,14 @@ inoremap ( ()<++><Esc>F)i
 inoremap [ []<++><Esc>F]i
 inoremap { {}<++><Esc>F}i
 
-nmap <TAB><TAB> :tabe<CR>
-nmap <TAB>j :tabprevious<CR>
-nmap <TAB>k :tabnext<CR>
-nmap <TAB>h :tabfirst<CR>
-nmap <TAB>l :tablast<CR>
-nmap <TAB>[ :bprevious<CR>
-nmap <TAB>] :bnext<CR>
-nmap <TAB>q :bdelete<CR>
+nmap <C-t>n :tabe<CR>
+nmap <C-t>j :tabprevious<CR>
+nmap <C-t>k :tabnext<CR>
+nmap <C-t>h :tabfirst<CR>
+nmap <C-t>l :tablast<CR>
+nmap <C-t>[ :bprevious<CR>
+nmap <C-t>] :bnext<CR>
+nmap <C-t>q :bdelete<CR>
 
 map <C-j> 5j
 map <C-k> 5k
