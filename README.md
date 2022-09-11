@@ -173,6 +173,7 @@ nvim init.vim
 | `<LEADER> + r +n` | 重命名               |
 | `<LEADER> + ?`    | 显示文档             |
 | `<LEADER> + a`    | 显示可以使用的活动   |
+| `<LEADER> + e`    | 显示/关闭explorer    |
 | `g + [`           | 跳转到前一个报错     |
 | `g + ]`           | 跳转到后一个报错     |
 | `g + d`           | 跳转到定义           |

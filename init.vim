@@ -97,7 +97,7 @@ imap <C-p> <ESC>ki
 " nmap <LEADER>n :NERDTree<CR>
 " nmap <LEADER>t :NERDTreeToggle<CR>
 " nmap <LEADER>f :NERDTreeFind<CR>
-nmap tt :NERDTreeToggle<CR>
+" nmap tt :NERDTreeToggle<CR>
 nmap tb :TagbarToggle<CR>
 nmap <LEADER>u :UndotreeToggle<CR>
 nmap <C-m>p :MarkdownPreview<CR>
@@ -124,8 +124,9 @@ Plug 'mhartington/oceanic-next'
 Plug 'luochen1990/rainbow'
 
 " NerdTree
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" has been replaced with coc-explorer
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " TagBar
 Plug 'preservim/tagbar'
@@ -230,7 +231,9 @@ let g:mkdp_filetypes = ['markdown']
 " extensions list
 let g:coc_global_extensions = [
             \ "coc-marketplace",
+            \ "coc-lists",
             \ "coc-highlight",
+            \ "coc-explorer",
             \ "coc-pairs",
             \ "coc-json",
             \ "coc-vimlsp",
@@ -309,4 +312,11 @@ let g:coc_snippet_next = '<c-w>'
 let g:coc_snippet_prev = '<c-q>'
 vmap <C-w> <Plug>(coc-snippets-select)
 " imap <C-w> <Plug>(coc-snippets-expand-jump)
+
+" configuration for coc-explorer
+:nmap <LEADER>e <Cmd>CocCommand explorer<CR>
+autocmd ColorScheme *
+  \ hi CocExplorerNormalFloatBorder guifg=#414347 guibg=#272B34
+  \ | hi CocExplorerNormalFloat guibg=#272B34
+  \ | hi CocExplorerSelectUI guibg=blue
 
