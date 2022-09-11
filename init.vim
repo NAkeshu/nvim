@@ -98,11 +98,11 @@ imap <C-p> <ESC>ki
 " nmap <LEADER>t :NERDTreeToggle<CR>
 " nmap <LEADER>f :NERDTreeFind<CR>
 " nmap tt :NERDTreeToggle<CR>
-nmap tb :TagbarToggle<CR>
+nmap <LEADER>t :TagbarToggle<CR>
 nmap <LEADER>u :UndotreeToggle<CR>
-nmap <C-m>p :MarkdownPreview<CR>
+nmap <LEADER>mp :MarkdownPreview<CR>
 " nmap <C-m>s :MarkdownPreviewStop<CR>
-nmap <C-m>t :TableModeToggle<CR>
+nmap <LEADER>mt :TableModeToggle<CR>
 filetype indent on
 filetype indent on
 filetype indent on
