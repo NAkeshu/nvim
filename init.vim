@@ -89,8 +89,8 @@ map <LEADER><CR> :nohlsearch<CR>
 " emacs keymapping
 imap <C-a> <ESC>I
 imap <C-e> <ESC>A
-imap <C-n> <ESC>ji
-imap <C-p> <ESC>ki
+" imap <C-n> <ESC>ji
+" imap <C-p> <ESC>ki
 
 " 插件快捷键
 " nmap tt :NERDTreeFocus<CR>
@@ -256,30 +256,31 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+inoremap <silent><expr> <C-n>
+      \ coc#pum#visible() ? coc#pum#next(1) : "\<ESC>ji"
+inoremap <silent><expr> <C-p>
+      \ coc#pum#visible() ? coc#pum#prev(1) : "<ESC>ki"
 " Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" : "\<TAB>"
-"  \ <SID>check_back_space() ? \"\<TAB>\" :
-"  \ coc#refresh()
-" <S-TAB>选择上一个或隐藏trigger
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+        \ coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-o> coc#refresh()
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <CR> to confirm completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
@@ -308,6 +309,10 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 imap <C-k> <Plug>(coc-snippets-expand)
+inoremap <silent> <expr> <C-e>
+      \ coc#pum#visible() ? coc#pum#scroll(1) : "<C-e>"
+inoremap <silent> <expr> <C-y>
+      \ coc#pum#visible() ? coc#pum#scroll(0) : "<C-y>"
 let g:coc_snippet_next = '<c-w>'
 let g:coc_snippet_prev = '<c-q>'
 vmap <C-w> <Plug>(coc-snippets-select)
