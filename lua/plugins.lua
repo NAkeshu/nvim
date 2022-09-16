@@ -1,10 +1,24 @@
 local packer = require("packer")
 packer.startup(
     function(use)
-        -- Packer 可以管理自己本身
-use 'wbthomason/packer.nvim'
+    -- Packer 可以管理自己本身
+    use 'wbthomason/packer.nvim'
 
--- 其他插件列表
+    -- 其他插件列表
+
+    -- colorschemes
+    ---- tokyonight
+    use "folke/tokyonight.nvim"
+    ---- gruvbox
+    use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
+    ---- nord
+    use("shaunsingh/nord.nvim")
+    ---- onedark
+    use("ful1e5/onedark.nvim")
+
+    -- nvim-tree
+    use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+
     end
 )
 

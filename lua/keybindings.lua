@@ -48,3 +48,32 @@ map("i", "<C-n>", "<ESC>ji", opt)
 map("i", "<C-p>", "<ESC>ki", opt)
 
 
+-- 
+-- 插件快捷键
+--
+local pluginKeys = {}
+
+-- nvim-tree
+-- <leader>t 打开关闭
+map("n", "<LEADER>t", ":NvimTreeToggle<CR>", opt)
+-- 列表快捷键
+pluginKeys.nvimTreeList = {
+    -- 打开文件或文件夹
+    { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
+    -- 分屏打开文件
+    { key = "v", action = "vsplit" },
+    { key = "i", action = "split" },
+    -- 显示隐藏文件
+    { key = "h", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
+    { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+    -- 文件操作
+    { key = "r", action = "refresh" },
+    { key = "a", action = "create" },
+    { key = "d", action = "remove" },
+    { key = "R", action = "rename" },
+    { key = "x", action = "cut" },
+    { key = "y", action = "copy" },
+    { key = "p", action = "paste" },
+    { key = "s", action = "system_open" },
+}
+return pluginKeys
