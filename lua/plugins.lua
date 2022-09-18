@@ -68,6 +68,9 @@ packer.startup(function(use)
 
     -- indent-blankline
     use("lukas-reineke/indent-blankline.nvim")
+    
+    -- Rust增强
+    use("simrat39/rust-tools.nvim")
 
     -- 代码格式化
     -- use("mhartington/formatter.nvim")
