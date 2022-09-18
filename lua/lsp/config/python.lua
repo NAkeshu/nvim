@@ -1,7 +1,13 @@
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local opts = {
     settings = {
         -- 这里需要自定义
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true
+            }
+        }
     },
 
     flags = {
