@@ -75,12 +75,17 @@ packer.startup(function(use)
     -- 代码格式化
     -- use("mhartington/formatter.nvim")
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+
+    -- git
+    use({ "lewis6991/gitsigns.nvim" })
+
 end)
+
 
 -- 修改 lua/plugins.lua 文件自动加载并调用 :PackerSync
 pcall(
-vim.cmd,
-[[
+    vim.cmd,
+    [[
 augroup packer_user_config
 autocmd!
 autocmd BufWritePost plugins.lua source <afile> | PackerSync
