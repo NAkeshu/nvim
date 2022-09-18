@@ -63,7 +63,7 @@ pluginKeys.nvimTreeList = {
     { key = "v", action = "vsplit" },
     { key = "i", action = "split" },
     -- 显示隐藏文件
-    { key = "h", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
+    { key = "H", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
     { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
     -- 文件操作
     { key = "r", action = "refresh" },
@@ -114,21 +114,46 @@ pluginKeys.telescopeList = {
 -- LSP 回调函数快捷键
 pluginKeys.mapLSP = function(mapbuf)
     -- rename
-    mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+    --[[
+  Lspsaga 替换 rn
+  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+  --]]
+    mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
     -- code action
-    mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+    --[[
+  Lspsaga 替换 ca
+  mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+  --]]
+    mapbuf("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opt)
     -- go xx
+    --[[
+    mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
+  --]]
     mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-    mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-    mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-    mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implemennation()<CR>", opt)
-    mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+    --[[
+  Lspsaga 替换 gh
+  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  --]]
+    mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
+    --[[
+  Lspsaga 替换 gr
+  mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+  --]]
+    mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+    --[[
+  Lspsaga 替换 gp, gj, gk
+  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+  --]]
     -- diagnostic
-    mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-    mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-    mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+    mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+    mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+    mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
     mapbuf("n", "<M-C-f>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
-    -- 没用到
+    -- 未用
+    -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+    -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
     -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
     -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
     -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
@@ -164,37 +189,37 @@ end
 
 -- SuperTab
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
 local feedkey = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
 local cmp = require('cmp')
 cmp.setup {
-  mapping = {
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
-    end, { "i", "s" }),
+    mapping = {
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif vim.fn["vsnip#available"](1) == 1 then
+                feedkey("<Plug>(vsnip-expand-or-jump)", "")
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+            end
+        end, { "i", "s" }),
 
-    ["<S-Tab>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
-      end
-    end, { "i", "s" }),
-  }
+        ["<S-Tab>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                feedkey("<Plug>(vsnip-jump-prev)", "")
+            end
+        end, { "i", "s" }),
+    }
 }
 
 return pluginKeys

@@ -56,9 +56,12 @@ packer.startup(
 
         -- ui
         use("onsails/lspkind-nvim")
+        -- lspsaga
+        use("tami5/lspsaga.nvim" )
 
         -- indent-blankline
         use("lukas-reineke/indent-blankline.nvim")
+
     end
 )
 
