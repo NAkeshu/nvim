@@ -54,6 +54,11 @@ packer.startup(
         ---- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
 
+        -- ui
+        use("onsails/lspkind-nvim")
+
+        -- indent-blankline
+        use("lukas-reineke/indent-blankline.nvim")
     end
 )
 
