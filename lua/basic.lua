@@ -50,6 +50,9 @@ vim.o.whichwrap = '<,>,[,]'
 vim.o.hidden = true
 -- 鼠标支持
 vim.o.mouse = "a"
+-- 共享剪切板
+vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamed"
 -- 禁止创建备份文件 <new>
 vim.o.backup = false
 vim.o.writebackup = false
