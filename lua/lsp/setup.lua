@@ -1,18 +1,33 @@
-local mason = require("mason").setup({})
-local mason_lspconfig = require("mason-lspconfig").setup({
-	ensure_installed = {
-		"sumneko_lua",
-		"tsserver",
-		"pyright",
-		"rust_analyzer",
-	},
+local mason = require("mason")
+local nvim_lsp = require("lspconfig")
+local mason_lspconfig = require("mason-lspconfig")
+
+mason.setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
 })
 
-require("mason-lspconfig").setup_handlers({
-	["sumneko_lua"] = require("lspconfig").sumneko_lua.setup(require("lsp.config.lua")),
-	["pyright"] = require("lspconfig").pyright.setup(require("lsp.config.python")),
-	["rust_analyzer"] = require("lspconfig").rust_analyzer.setup(require("lsp.config.rust")),
-	-- function (sumneko_lua)
-	--     require('lsp.config.lua')
-	-- end
+mason_lspconfig.setup({
+    ensure_installed = {
+        "sumneko_lua",
+        "tsserver",
+        "pyright",
+        "rust_analyzer",
+        "julials",
+    },
+})
+
+mason_lspconfig.setup_handlers({
+    ["sumneko_lua"] = nvim_lsp['sumneko_lua'].setup(require("lsp.config.lua")),
+    ["pyright"] = nvim_lsp['pyright'].setup(require("lsp.config.python")),
+    ["rust_analyzer"] = nvim_lsp['rust_analyzer'].setup(require("lsp.config.rust")),
+    ['julials'] = nvim_lsp['julials'].setup(require("lsp.config.julia")),
+    -- function (sumneko_lua)
+    --     nvim_lsp['sumneko_lua'].setup(require('lsp.config.lua'))
+    -- end
 })
