@@ -20,10 +20,10 @@ local servers = {
 }
 
 local server_list = {
-   "sumneko_lua",
-   "pyright",
-   "rust_analyzer",
-   "julials",
+    "sumneko_lua",
+    "pyright",
+    "rust_analyzer",
+    "julials",
 }
 
 m_lspconfig.setup({
