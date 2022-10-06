@@ -18,8 +18,8 @@ map("n", "<C-k>", "5k", opt)
 map("n", "<LEADER><CR>", ":nohlsearch<CR>", opt)
 
 -- placeholder 相关
-map("i", "<C-m>", "<+hold+>", opt)
-map("i", "<C-f>", "<Esc>/<+hold+><CR><Esc>cf>", opt)
+-- map("i", "<C-m>", "<+hold+>", opt)
+-- map("i", "<C-f>", "<Esc>/<+hold+><CR><Esc>cf>", opt)
 
 -- vim terminal 相关
 -- <leader>= 在右侧窗口启动terminal
