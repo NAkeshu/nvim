@@ -42,11 +42,11 @@ null_ls.setup({
         formatting.rustfmt,
 
         -- python
-        diagnostics.mypy.with({
-            extra_args = {
-                "--ignore-missing-imports",
-            }
-        }),
+        -- diagnostics.mypy.with({
+            -- extra_args = {
+                -- "--ignore-missing-imports",
+            -- }
+        -- }),
 
         -- Diagnostics  ---------------------
         diagnostics.eslint.with({
