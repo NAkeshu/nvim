@@ -41,6 +41,13 @@ null_ls.setup({
         -- rustfmt
         formatting.rustfmt,
 
+        -- python
+        diagnostics.mypy.with({
+            extra_args = {
+                "--ignore-missing-imports",
+            }
+        }),
+
         -- Diagnostics  ---------------------
         diagnostics.eslint.with({
             prefer_local = "node_modules/.bin",
