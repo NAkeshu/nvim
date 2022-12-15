@@ -6,8 +6,6 @@ packer.startup(function(use)
     -- 其他插件列表
 
     -- colorschemes
-    ---- tokyonight
-    use("folke/tokyonight.nvim")
     ---- gruvbox
     use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
     ---- nord
